@@ -1,0 +1,25 @@
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.lds56.WebCrawler.*;
+
+public class example {
+	public static void main(String[] args) {
+		URL aUrl;
+		try {
+			aUrl = new URL("http://www.ifanr.com/458506");
+			WebContentCrawlerII crawler = new WebContentCrawlerII(aUrl, WebCrawlerII.USE_HTTP_CLIENT, WebCrawlerII.USE_SOUP_PARSER);
+			for (URL link : crawler.getLinkList()) {
+				System.out.println(link.toString());
+			}
+			System.out.println(crawler.getContentText());
+			crawler.exportImageInHtml();
+			crawler.exportImageInFile();
+			crawler.printTextInHtml();
+			crawler.printTextInPlainText(); 
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+

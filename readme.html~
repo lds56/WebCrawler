@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="文件目录">文件目录</h1>
+
+<pre>.
+├── dependency-reduced-pom.xml              
+├── example                             例程
+│   ├── example.class                   例程二进制代码
+│   ├── example.java                    例程源代码
+│   ├── example.java~                  
+│   ├── img                             下载的图像文件夹
+│   │   ├── 210.jpg                 
+│   │   ├── 37.jpg
+│   │   ├── D1.jpg
+│   │   └── images.html                 将下载的图像以html的格式展示
+│   ├── start.sh                        编译指令
+│   ├── start.sh~
+│   └── txt                             下载的文字文件夹
+│       ├── WebContent.html             将下载的文字以html的格式展示
+│       └── WebContent.txt              下载的文字
+├── pom.xml
+├── src                                 源代码
+│   ├── main
+│   │   └── java
+│   │       └── org
+│   │           └── lds56
+│   │               └── WebCrawler
+│   │                   ├── WebContentCrawlerII.java    网页爬虫源代码
+│   │                   └── WebCrawlerII.java           网页正文爬虫源代码
+│   └── test
+│       └── java
+│           └── org
+│               └── lds56
+│                   └── WebCrawler
+│                       └── AppTest.java                编译测试代码
+└── target
+    ├── classes
+    │   └── org
+    │       └── lds56
+    │           └── WebCrawler
+    │               ├── ImageUrl.class                  二进制代码
+    │               ├── WebContentCrawlerII.class
+    │               └── WebCrawlerII.class
+    ├── maven-archiver
+    │   └── pom.properties
+        ├── original-WebCrawler-0.0.1-SNAPSHOT.jar      打包后无依赖的jar
+    ├── surefire-reports
+    │   ├── org.lds56.WebCrawler.AppTest.txt
+    │   └── TEST-org.lds56.WebCrawler.AppTest.xml
+    ├── test-classes
+    │   └── org
+    │       └── lds56
+    │           └── WebCrawler
+    │               └── AppTest.class
+            └── WebCrawler-0.0.1-SNAPSHOT.jar           打包后有依赖的jar
+</pre>
+
+
+
+<h1 id="功能说明">功能说明</h1>
+
+<ul>
+<li>WebCrawlerII: <br>
+<ul><li>一般的网页源码抓取 <br>
+<ul><li>用HttpURLConnection抓取</li>
+<li>用HttpClient抓取</li></ul></li>
+<li>网页链接匹配 <br>
+<ul><li>用正则表达式匹配href=</li>
+<li>用Jsoup匹配a[href]</li></ul></li>
+<li>网页图片下载 <br>
+<ul><li>用正则表达式匹配.jpg/bmp/gif</li>
+<li>用Jsoup匹配img[src]</li></ul></li>
+<li>规定大小范围的网页图片下载</li></ul></li>
+<li><p>WebContentCrawlerII:</p>
+
+<ul><li>继承自WebCrawlerII，故可实现其父类的所有功能</li>
+<li>网页正文源码抓取</li>
+<li>网页正文文本抓取 <br>
+<ul><li>用正则表达式匹配<p></p></li></ul></li>
+<li>网页图片输出 <br>
+<ul><li>Html格式</li>
+<li>一般格式</li></ul></li>
+<li>网页正文输出 <br>
+<ul><li>Plain Text格式</li>
+<li>Html格式</li></ul></li></ul></li>
+<li><p><em>具体说明在<a href="file://./readme.pdf">readme.pdf</a>中</em></p></li>
+</ul>
+
+</html>

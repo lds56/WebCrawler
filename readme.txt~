@@ -1,0 +1,76 @@
+#文件目录
+.
+├── dependency-reduced-pom.xml				
+├── example						例程
+│   ├── example.class					例程二进制代码
+│   ├── example.java					例程源代码
+│   ├── example.java~					
+│   ├── img						下载的图像文件夹
+│   │   ├── 210.jpg					
+│   │   ├── 37.jpg
+│   │   ├── D1.jpg
+│   │   └── images.html					将下载的图像以html的格式展示
+│   ├── start.sh					编译指令
+│   ├── start.sh~
+│   └── txt						下载的文字文件夹
+│       ├── WebContent.html				将下载的文字以html的格式展示
+│       └── WebContent.txt				下载的文字
+├── pom.xml
+├── src							源代码
+│   ├── main
+│   │   └── java
+│   │       └── org
+│   │           └── lds56
+│   │               └── WebCrawler
+│   │                   ├── WebContentCrawlerII.java	网页爬虫源代码
+│   │                   └── WebCrawlerII.java		网页正文爬虫源代码
+│   └── test
+│       └── java
+│           └── org
+│               └── lds56
+│                   └── WebCrawler
+│                       └── AppTest.java		编译测试代码
+└── target
+    ├── classes
+    │   └── org
+    │       └── lds56
+    │           └── WebCrawler
+    │               ├── ImageUrl.class			二进制代码
+    │               ├── WebContentCrawlerII.class
+    │               └── WebCrawlerII.class
+    ├── maven-archiver
+    │   └── pom.properties
+    ├── original-WebCrawler-0.0.1-SNAPSHOT.jar		打包后无依赖的jar
+    ├── surefire-reports
+    │   ├── org.lds56.WebCrawler.AppTest.txt
+    │   └── TEST-org.lds56.WebCrawler.AppTest.xml
+    ├── test-classes
+    │   └── org
+    │       └── lds56
+    │           └── WebCrawler
+    │               └── AppTest.class
+    └── WebCrawler-0.0.1-SNAPSHOT.jar			打包后有依赖的jar
+
+#功能说明
+WebCrawlerII:
+	- 一般的网页源码抓取
+		- 用HttpURLConnection抓取
+		- 用HttpClient抓取
+	- 网页链接匹配
+		- 用正则表达式匹配href=
+		- 用Jsoup匹配a[href]
+	- 网页图片下载
+		- 用正则表达式匹配.jpg/bmp/gif
+		- 用Jsoup匹配img[src]
+	- 规定大小范围的网页图片下载
+WebContentCrawlerII:
+	- 继承自WebCrawlerII，故可实现其父类的所有功能
+	- 网页正文源码抓取
+	- 网页正文文本抓取
+		- 用正则表达式匹配<p></p>
+	- 网页图片输出
+		- Html格式
+		- 一般格式
+	- 网页正文输出
+		- Plain Text格式
+		- Html格式
